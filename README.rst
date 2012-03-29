@@ -12,11 +12,11 @@ Here is assertEquals, barely functioning on Mac OS X:
 Installation
 ------------
 
-To install the Python library and the executable:
+To install the Python library and the executable::
 
     $ pip install assertEquals
 
-To also install the man page:
+To also install the man page::
 
     $ make
     $ sudo make install
