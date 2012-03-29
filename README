@@ -1,16 +1,19 @@
-testosterone is a manly Python testing interface.
+assertEquals is an opinionated Python testing interface.
 
 
 INSTALLATION
 
+    $ pip install assertEquals
+
+
     $ make
     $ sudo make install
 
-This installs the testosterone Python package, the testosterone executable, and
-the testosterone(1) man page. Please consult the Makefile to confirm and/or
+This installs the assertEquals Python package, the assertEquals executable, and
+the assertEquals(1) man page. Please consult the Makefile to confirm and/or
 change installation paths, etc.
 
 
 SEE ALSO
 
-    http://www.zetadev.com/software/testosterone/
+    http://whit537.github.com/assertEquals/

@@ -9,9 +9,9 @@ MKHOWTO    = $(PYTHON_SRC)/Doc/tools/mkhowto \
 				--favicon icons/zeta.ico \
 				--dir ./html \
 				--logging \
-				--up-link "https://assertEquals.github.com/" \
+				--up-link "http://whit537.github.com/assertEquals/" \
 				--up-title "assertEquals homepage" \
-				--address "<a href=\"http://assertEquals.github.com/assertEquals/\">assertEquals is copyright &copy; 2005-2012 by Chad Whitacre, and is offered free of charge, warranty, and restrictions." \
+				--address "<a href=\"http://whit537.github.com/assertEquals/\">assertEquals is copyright &copy; 2005-2012 by Chad Whitacre, and is offered free of charge, warranty, and restrictions." \
 #				--style style.css
 
 
@@ -20,7 +20,7 @@ default: html
 html: clean
 	$(MKHOWTO) assertEquals.tex
 	cp -r ../icons ./html/
-	rm -rf ../html && mv ./html ../
+	rm -rf ../../../assertEqualsDocs/* && mv ./html/* ../../../assertEqualsDocs/ && rm -rf ./html
 
 pdf:
 	$(PYTHON_SRC)/Doc/tools/mkhowto --pdf assertEquals.tex
