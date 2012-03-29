@@ -45,18 +45,18 @@ First thing the next morning::
 
 I'm not going to pretend that testosterone wasn't fun, or that sexist jokes are
 an absolute evil. But the truth is that I really do want to encourage women in
-tech, and a project like testosterone does not do that. I remember being
-surprised to see *a woman* at PyCon 2011. I don't have the data, but
-anecdotally I'm telling you there were LOTS more women at PyCon 2012. Let's do
-more of that!
+tech (I have three young daughters), and a project like testosterone does not
+do that. I remember being surprised to see *a woman* at PyCon 2011. I don't
+have the data, but anecdotally I'm telling you there were LOTS more women at
+PyCon 2012. Let's do more of that!
 
-I've decided not to rename the project testrogen, however. I'm calling it
-assertEquals. I'm keeping the old pages around with a banner pointing to the
+I've decided not to rename the project testrogen, however. Instead, I'm calling
+it assertEquals. I'm keeping the old pages around with a banner pointing to the
 new site, and if anyone is interested in an opinionated testing interface for
 Python, I encourage you to check it out:
 
     https://github.com/whit537/assertEquals
 
-Keep hacking, ladies!
+Keep hacking, ladies and gentlefolk!
 
 And Barbie, thank you for calling me out.
