@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="STYLESHEET" href="assertEquals.css" type='text/css' />
+<link rel="SHORTCUT ICON" href="icons/zeta.ico" />
+<link rel='start' href='http://whit537.github.com/assertEquals/' title='assertEquals homepage' />
+<link rel="first" href="assertEquals.html" title='assertEquals' />
+<link rel='last' href='about.html' title='About this document...' />
+<link rel='help' href='about.html' title='About this document...' />
+<link rel="next" href="interactive.html" />
+<link rel="prev" href="options.html" />
+<link rel="parent" href="assertEquals.html" />
+<link rel="next" href="interactive.html" />
+<meta name='aesop' content='information' />
+<title>2. Scripted Mode </title>
+</head>
+<body>
+<DIV CLASS="navigation">
+<div id='top-navigation-panel' xml:id='top-navigation-panel'>
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class='online-navigation'><a rel="prev" title="1. Options"
+  href="options.html"><img src='icons/previous.png'
+  border='0' height='32'  alt='Previous Page' width='32' /></A></td>
+<td class='online-navigation'><a rel="parent" title="assertEquals"
+  href="assertEquals.html"><img src='icons/up.png'
+  border='0' height='32'  alt='Up One Level' width='32' /></A></td>
+<td class='online-navigation'><a rel="next" title="3. Interactive Mode"
+  href="interactive.html"><img src='icons/next.png'
+  border='0' height='32'  alt='Next Page' width='32' /></A></td>
+<td align="center" width="100%">assertEquals</td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+</tr></table>
+<div class='online-navigation'>
+<b class="navlabel">Previous:</b>
+<a class="sectref" rel="prev" href="options.html">1. Options</A>
+<b class="navlabel">Up:</b>
+<a class="sectref" rel="parent" href="assertEquals.html">assertEquals</A>
+<b class="navlabel">Next:</b>
+<a class="sectref" rel="next" href="interactive.html">3. Interactive Mode</A>
+</div>
+<hr /></div>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION002000000000000000000"></A><A NAME="scripted"></A>
+<BR>
+2. Scripted Mode 
+</H1>
+
+<P>
+If the <b class="programopt">--testcase</b> option is not given, <b class="program">assertEquals</b>
+imports <var>module</var>, and then searches <code>sys.modules</code> for all modules at or
+below <var>module</var> that do not include any <var>stopwords</var> in their full dotted
+name. <b class="program">assertEquals</b> collects <tt class="class">TestCase</tt> classes that are defined
+in these modules, and prints a summary report to the standard output of the
+format:
+
+<P>
+<div class="verbatim"><pre>
+-------------------------------&lt;| assertEquals |&gt;-------------------------------
+&lt;header row&gt;
+--------------------------------------------------------------------------------
+&lt;name&gt;                                       &lt;passing&gt; &lt;failures&gt; &lt;errors&gt; &lt;all&gt;
+--------------------------------------------------------------------------------
+TOTALS                                       &lt;passing&gt; &lt;failures&gt; &lt;errors&gt; &lt;all&gt;
+</pre></div>
+
+<P>
+<code>&lt;name&gt;</code> is the full dotted name of a <tt class="class">TestCase</tt> (this row is
+repeated for each <tt class="class">TestCase</tt>). If the <b class="programopt">--find</b> flag is set,
+then no tests are run, and <code>&lt;passing&gt;</code>, <code>&lt;failures&gt;</code>, and
+<code>&lt;errors&gt;</code> are each set to a single dash (<code>-</code>). Otherwise,
+<code>&lt;passing&gt;</code> is given as a percentage, with a terminating percent sign; the
+other three are given in absolute terms. There will always be at least one space
+between each field, and data rows will be longer than 80 characters iff the
+field values exceed the following character lengths:
+
+<P>
+<div class="center"><table class="realtable">
+  <thead>
+    <tr>
+      <th class="left"  >field</th>
+      <th class="left"  >width</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr><td class="left"   valign="baseline">name</td>
+        <td class="left"  >60</td></tr>
+    <tr><td class="left"   valign="baseline">failures</td>
+        <td class="left"  >4</td></tr>
+    <tr><td class="left"   valign="baseline">errors</td>
+        <td class="left"  >4</td></tr>
+    <tr><td class="left"   valign="baseline">all</td>
+        <td class="left"  >4</td></tr></tbody>
+</table></div>
+
+<P>
+Note that in order for your <tt class="class">TestCase</tt>s to be found, you must import their
+containing modules within <var>module</var>. <b class="program">assertEquals</b> sets the
+<a class="envvar" id='l2h-1' xml:id='l2h-1'>PYTHONTESTING</a> environment variable to <code>assertEquals</code> so that you
+can avoid defining <tt class="class">TestCase</tt>s or importing testing modules in a
+production environment. You can also quarantine your tests in a subpackage, and
+give <var>module</var> as the dotted name of this subpackage.
+
+<P>
+If the <b class="programopt">--testcase</b> flag is set, then only the named
+<tt class="class">TestCase</tt> is run (any <b class="programopt">--find</b> option is ignored), and
+<b class="program">assertEquals</b> delivers a detail report. This report is the usual output
+of <tt class="class">unittest.TextTestRunner</tt>, preceded by the same first banner row as for
+the summary report.
+
+<P>
+For both summary and detail reports, <b class="program">assertEquals</b> guarantees that no
+program output will occur after the banner row.
+
+<DIV CLASS="navigation">
+<div class='online-navigation'>
+<p></p><hr />
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class='online-navigation'><a rel="prev" title="1. Options"
+  href="options.html"><img src='icons/previous.png'
+  border='0' height='32'  alt='Previous Page' width='32' /></A></td>
+<td class='online-navigation'><a rel="parent" title="assertEquals"
+  href="assertEquals.html"><img src='icons/up.png'
+  border='0' height='32'  alt='Up One Level' width='32' /></A></td>
+<td class='online-navigation'><a rel="next" title="3. Interactive Mode"
+  href="interactive.html"><img src='icons/next.png'
+  border='0' height='32'  alt='Next Page' width='32' /></A></td>
+<td align="center" width="100%">assertEquals</td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+</tr></table>
+<div class='online-navigation'>
+<b class="navlabel">Previous:</b>
+<a class="sectref" rel="prev" href="options.html">1. Options</A>
+<b class="navlabel">Up:</b>
+<a class="sectref" rel="parent" href="assertEquals.html">assertEquals</A>
+<b class="navlabel">Next:</b>
+<a class="sectref" rel="next" href="interactive.html">3. Interactive Mode</A>
+</div>
+</div>
+<hr />
+<span class="release-info">Release 0.4.2, documentation updated on March 29, 2012.</span>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<a href="http://whit537.github.com/assertEquals/">assertEquals is copyright &copy; 2005-2012 by Chad Whitacre, and is offered free of charge, warranty, and restrictions.
+</ADDRESS>
+</BODY>
+</HTML>

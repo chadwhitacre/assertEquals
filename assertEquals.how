@@ -1,0 +1,138 @@
++++ TEXINPUTS=/Users/whit537/personal/assertEquals/doc/tex:/Users/whit537/src/Python-2.4.2/Doc/paper-letter:/Users/whit537/src/Python-2.4.2/Doc/texinputs:
++++ latex assertEquals
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
+ restricted \write18 enabled.
+entering extended mode
+(/Users/whit537/personal/assertEquals/doc/tex/assertEquals.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ba
+sque, danish, dutch, finnish, french, german, ngerman, swissgerman, hungarian, 
+italian, bokmal, nynorsk, polish, portuguese, spanish, swedish, loaded.
+(/Users/whit537/src/Python-2.4.2/Doc/texinputs/manual.cls
+Document Class: manual 1998/03/03 Document class (Python manual)
+(/Users/whit537/src/Python-2.4.2/Doc/texinputs/pypaper.sty
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/psnfss/times.sty)
+Using Times instead of Computer Modern.
+) (/usr/local/texlive/2011basic/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (/usr/local/texlive/2011basic/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/base/size10.clo))
+(/Users/whit537/src/Python-2.4.2/Doc/texinputs/fancyhdr.sty)
+Using fancier footers than usual.
+(/Users/whit537/src/Python-2.4.2/Doc/texinputs/fncychap.sty)
+Using fancy chapter headings.
+(/Users/whit537/src/Python-2.4.2/Doc/texinputs/python.sty
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/base/alltt.sty)))
+Writing index file assertEquals.idx
+No file assertEquals.aux.
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/psnfss/ot1phv.fd) [1]
+(/usr/local/texlive/2011basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
+Adding blank page after the abstract.
+[1] [2] (/Users/whit537/personal/assertEquals/doc/tex/options.tex
+Chapter 1.
+) (/Users/whit537/personal/assertEquals/doc/tex/scripted.tex [3] [4]
+Chapter 2.
+) (/Users/whit537/personal/assertEquals/doc/tex/interactive.tex [5] [6]
+Chapter 3.
+[7]) [8] (/Users/whit537/personal/assertEquals/doc/tex/assertEquals.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+Output written on assertEquals.dvi (9 pages, 10944 bytes).
+Transcript written on assertEquals.log.
++++ latex2html -init_file assertEquals.l2h -dir /Users/whit537/personal/assertEquals/doc/tex/html /Users/whit537/personal/assertEquals/doc/tex/assertEquals.tex
+$* is no longer supported at /usr/local/bin/latex2html line 10588.
+Note: Initialising with file: assertEquals.l2h
+Prototype mismatch: sub main::top_navigation_panel: none vs () at assertEquals.l2h line 255.
+Prototype mismatch: sub main::bot_navigation_panel: none vs () at assertEquals.l2h line 265.
+Prototype mismatch: sub main::add_special_link: none vs ($$$) at assertEquals.l2h line 307.
+Prototype mismatch: sub main::add_idx: none vs () at assertEquals.l2h line 349.
+Prototype mismatch: sub main::make_head_and_body: none vs ($$) at assertEquals.l2h line 777.
+This is LaTeX2HTML Version 2008 (1.71)
+by Nikos Drakos, Computer Based Learning Unit, University of Leeds.
+
+Revised and extended by:
+ Marcus Hennecke, Ross Moore, Herb Swan and others
+...producing markup for HTML version 4.0  
+
+
+
+Extension: loading /usr/local/share/lib/latex2html/versions/latin1.pl
+HTML version: loading /usr/local/share/lib/latex2html/versions/html4_0.pl
+
+ *** processing declarations ***
+
+Setting $TEXINPUTS to /Users/whit537/personal/assertEquals/doc/tex:/Users/whit537/personal/assertEquals/doc/tex:/Users/whit537/src/Python-2.4.2/Doc/texinputs:/Users/whit537/personal/assertEquals/doc/tex:/Users/whit537/src/Python-2.4.2/Doc/paper-letter:/Users/whit537/src/Python-2.4.2/Doc/texinputs:
+
+OPENING /Users/whit537/personal/assertEquals/doc/tex/assertEquals.tex 
+
+Cannot create directory /Users/whit537/personal/assertEquals/doc/tex/html/: File exists, reusing it.
+
+Note: Working directory is /Users/whit537/personal/assertEquals/doc/tex/html
+Note: Images will be generated in /tmp/l2h48645
+
+texexpand V2008 (Revision 1.12)
+
+
+
+Loading /usr/local/share/lib/latex2html/styles/texdefs.perl...
+Package: loading /Users/whit537/src/Python-2.4.2/Doc/perl/manual.perl
+Package: loading /usr/local/share/lib/latex2html/styles/report.perl
+Package: loading /usr/local/share/lib/latex2html/styles/alltt.perl
+Package: loading /Users/whit537/src/Python-2.4.2/Doc/perl/python.perlSubroutine do_cmd_textasciitilde redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 89, <STYLES> line 1.
+Subroutine do_cmd_textasciicircum redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 90, <STYLES> line 1.
+Subroutine do_cmd_textbar redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 91, <STYLES> line 1.
+Subroutine do_cmd_textgreater redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 93, <STYLES> line 1.
+Subroutine do_cmd_textless redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 94, <STYLES> line 1.
+Subroutine do_cmd_LaTeX redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 110, <STYLES> line 1.
+Subroutine do_cmd_TeX redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 111, <STYLES> line 1.
+Subroutine do_cmd_email redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 235, <STYLES> line 1.
+Subroutine do_cmd_emph redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 245, <STYLES> line 1.
+Subroutine do_cmd_textbf redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 257, <STYLES> line 1.
+Subroutine do_cmd_textit redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 259, <STYLES> line 1.
+Subroutine do_cmd_url redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 330, <STYLES> line 1.
+Subroutine do_cmd_maketitle redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 1694, <STYLES> line 1.
+Subroutine do_env_alltt redefined at /Users/whit537/src/Python-2.4.2/Doc/perl/python.perl line 2015, <STYLES> line 1.
+Subroutine do_cmd_index redefined at (eval 494) line 1, <STYLES> line 1.
+
+Reading ...
+%%%%%%%%%%%%%%%%%'++
+@@@@@@@@@@@@@@@@@@@
+
+Doing ./options.tex 
+
+Processing macros ...++
+@@@@@@@
+
+Doing ./scripted.tex 
+'
+Processing macros ...++
+@@@@@@@
+
+Doing ./interactive.tex 
+'
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@
+
+add_bbl_and_idx_dummy_commands ==> no index found
+Reading aux file: /Users/whit537/personal/assertEquals/doc/tex/assertEquals.aux ...
+Processing macros ...++...............................................
+Translating ...0/8.................;..,.....,...............;.
+1/8...;..,................................;.
+2/8...;..,..,...;..................................
+3/8...;...;.....
+4/8....;...,......;.........
+5/8....;..,....;......
+6/8....;..,..;..
+7/8....;...,.,.;....
+8/8..;;.
+
+Doing section links ....................
+ *** Adding document-specific styles *** 
+Done.
++++ perl /Users/whit537/src/Python-2.4.2/Doc/tools/node2label.pl *.html

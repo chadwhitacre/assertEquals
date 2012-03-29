@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="STYLESHEET" href="assertEquals.css" type='text/css' />
+<link rel="SHORTCUT ICON" href="icons/zeta.ico" />
+<link rel='start' href='http://whit537.github.com/assertEquals/' title='assertEquals homepage' />
+<link rel="first" href="assertEquals.html" title='assertEquals' />
+<link rel='last' href='about.html' title='About this document...' />
+<link rel='help' href='about.html' title='About this document...' />
+<link rel="next" href="scripted.html" />
+<link rel="prev" href="assertEquals.html" />
+<link rel="parent" href="assertEquals.html" />
+<link rel="next" href="scripted.html" />
+<meta name='aesop' content='information' />
+<title>1. Options </title>
+</head>
+<body>
+<DIV CLASS="navigation">
+<div id='top-navigation-panel' xml:id='top-navigation-panel'>
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class='online-navigation'><a rel="prev" title="assertEquals"
+  href="assertEquals.html"><img src='icons/previous.png'
+  border='0' height='32'  alt='Previous Page' width='32' /></A></td>
+<td class='online-navigation'><a rel="parent" title="assertEquals"
+  href="assertEquals.html"><img src='icons/up.png'
+  border='0' height='32'  alt='Up One Level' width='32' /></A></td>
+<td class='online-navigation'><a rel="next" title="2. Scripted Mode"
+  href="scripted.html"><img src='icons/next.png'
+  border='0' height='32'  alt='Next Page' width='32' /></A></td>
+<td align="center" width="100%">assertEquals</td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+</tr></table>
+<div class='online-navigation'>
+<b class="navlabel">Previous:</b>
+<a class="sectref" rel="prev" href="assertEquals.html">assertEquals</A>
+<b class="navlabel">Up:</b>
+<a class="sectref" rel="parent" href="assertEquals.html">assertEquals</A>
+<b class="navlabel">Next:</b>
+<a class="sectref" rel="next" href="scripted.html">2. Scripted Mode</A>
+</div>
+<hr /></div>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001000000000000000000"></A><A NAME="options"></A>
+<BR>
+1. Options 
+</H1>
+
+<P>
+<b class="program">assertEquals</b> takes the following options:
+
+<P>
+<DL>
+<DT><STRONG><b class="programopt">-s</b></STRONG></DT>
+<DD>
+</DD>
+<DT><STRONG><b class="programopt">--scripted</b></STRONG></DT>
+<DD>Use the command-line interface. If not set, <b class="program">assertEquals</b> will use
+    the <span class="manpage"><i>curses</i>(3)</span> interface.
+
+<P>
+</DD>
+<DT><STRONG><b class="programopt">-f</b></STRONG></DT>
+<DD>
+</DD>
+<DT><STRONG><b class="programopt">--find-only</b></STRONG></DT>
+<DD><b class="program">assertEquals</b> should find <tt class="class">TestCase</tt>s but not run them. This
+    only obtains in scripted mode, for summary reports.
+
+<P>
+</DD>
+<DT><STRONG><b class="programopt">-x</b> <var>stopwords</var></STRONG></DT>
+<DD>
+</DD>
+<DT><STRONG><b class="programopt">--stopwords</b> <var>stopwords</var></STRONG></DT>
+<DD><var>stopwords</var> is a comma-delimited list of strings that, if they appear
+    in a module's full dotted name, will prevent that module from being included
+    in the search for <tt class="class">TestCase</tt>s.
+
+<P>
+</DD>
+<DT><STRONG><b class="programopt">-t</b> <var>testcase</var></STRONG></DT>
+<DD>
+</DD>
+<DT><STRONG><b class="programopt">--testcase</b> <var>testcase</var></STRONG></DT>
+<DD>
+</DD>
+<DT><STRONG><b class="programopt">--TestCase</b> <var>testcase</var></STRONG></DT>
+<DD><b class="program">assertEquals</b> should only run the tests found in <var>testcase</var> ,
+    which is the name of a Python <tt class="class">unittest.TestCase</tt> class within the
+    module specified by <var>module</var>. Given this option, <b class="program">assertEquals</b>
+    will output a detail report for the named <tt class="class">TestCase</tt>; without it, a
+    summary report for all <tt class="class">TestCase</tt>s found at or below <var>module</var>.
+    This option only obtains in scripted mode.
+
+<P>
+</DD>
+</DL>
+
+<DIV CLASS="navigation">
+<div class='online-navigation'>
+<p></p><hr />
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class='online-navigation'><a rel="prev" title="assertEquals"
+  href="assertEquals.html"><img src='icons/previous.png'
+  border='0' height='32'  alt='Previous Page' width='32' /></A></td>
+<td class='online-navigation'><a rel="parent" title="assertEquals"
+  href="assertEquals.html"><img src='icons/up.png'
+  border='0' height='32'  alt='Up One Level' width='32' /></A></td>
+<td class='online-navigation'><a rel="next" title="2. Scripted Mode"
+  href="scripted.html"><img src='icons/next.png'
+  border='0' height='32'  alt='Next Page' width='32' /></A></td>
+<td align="center" width="100%">assertEquals</td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+<td class='online-navigation'><img src='icons/blank.png'
+  border='0' height='32'  alt='' width='32' /></td>
+</tr></table>
+<div class='online-navigation'>
+<b class="navlabel">Previous:</b>
+<a class="sectref" rel="prev" href="assertEquals.html">assertEquals</A>
+<b class="navlabel">Up:</b>
+<a class="sectref" rel="parent" href="assertEquals.html">assertEquals</A>
+<b class="navlabel">Next:</b>
+<a class="sectref" rel="next" href="scripted.html">2. Scripted Mode</A>
+</div>
+</div>
+<hr />
+<span class="release-info">Release 0.4.2, documentation updated on March 29, 2012.</span>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<a href="http://whit537.github.com/assertEquals/">assertEquals is copyright &copy; 2005-2012 by Chad Whitacre, and is offered free of charge, warranty, and restrictions.
+</ADDRESS>
+</BODY>
+</HTML>
