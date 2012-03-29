@@ -29,3 +29,5 @@ Documentation
 
 http://whit537.github.com/assertEquals/
 
+Yes, we're hosting an old-school, unholy, Python-Perl, PDFLaTeX to HTML,
+do-you-know-how-many-source-compiles-this-took monstrosity on Github Pages.
