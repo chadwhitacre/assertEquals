@@ -13,7 +13,8 @@ Fast forward to 2012. I haven't touched testosterone for years, but I still
 reminisce about it with friends at PyCon. For one reason and another I decided
 to try installing it last night, and with a tweak or two I got it to load in
 Mac OS. Yay! So I cut a new release, the first one in six years. Here's the
-conversation that followed, on Twitter, with my friend Barbie (@velociraptors):
+conversation that followed, on Twitter, with my friend Barbie
+(@velociraptors)::
 
     ME: Did I just release a new version of testosterone? Why yes, yes I did.
      <link>
@@ -35,7 +36,7 @@ conversation that followed, on Twitter, with my friend Barbie (@velociraptors):
     ME (clearly not #winning): Check mate. Good game.
 
 
-First thing the next morning:
+First thing the next morning::
 
     ME: Sorry for the sexism.
 
