@@ -43,7 +43,7 @@ Chapter 3.
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
-Output written on assertEquals.dvi (9 pages, 10944 bytes).
+Output written on assertEquals.dvi (9 pages, 10908 bytes).
 Transcript written on assertEquals.log.
 +++ latex2html -init_file assertEquals.l2h -dir /Users/whit537/personal/assertEquals/doc/tex/html /Users/whit537/personal/assertEquals/doc/tex/assertEquals.tex
 $* is no longer supported at /usr/local/bin/latex2html line 10588.
@@ -74,7 +74,7 @@ OPENING /Users/whit537/personal/assertEquals/doc/tex/assertEquals.tex
 Cannot create directory /Users/whit537/personal/assertEquals/doc/tex/html/: File exists, reusing it.
 
 Note: Working directory is /Users/whit537/personal/assertEquals/doc/tex/html
-Note: Images will be generated in /tmp/l2h49130
+Note: Images will be generated in /tmp/l2h49255
 
 texexpand V2008 (Revision 1.12)
 
@@ -122,7 +122,7 @@ Processing macros ...++
 add_bbl_and_idx_dummy_commands ==> no index found
 Reading aux file: /Users/whit537/personal/assertEquals/doc/tex/assertEquals.aux ...
 Processing macros ...++...............................................
-Translating ...0/8.................;..,.....,...............;.
+Translating ...0/8..............;..,.....,...............;.
 1/8...;..,................................;.
 2/8...;..,..,...;..................................
 3/8...;...;.....
