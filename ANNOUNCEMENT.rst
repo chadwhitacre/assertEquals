@@ -3,7 +3,7 @@ Why I am Renaming Testosterone
 
 Seven years ago I released an open source project called testosterone, "a manly
 testing interface for Python." It was epic: a test runner implemented with
-curses, Norton Commander for unittest. I wrote my own scrollbars. It proxied
+curses, Norton Commander for unittest. I wrote my own scrollbars. I proxied
 pdb in subprocesses. The docs were in Python's old LaTeX doc system. I wrote a
 man page for it. Jeremy Hylton interrupted my lightening talk at PyCon 2006 to
 tell me that the Van Halen soundtrack was disrupting the session next door. Fun
@@ -16,29 +16,29 @@ Mac OS. Yay! So I cut a new release, the first one in six years. Here's the
 conversation that followed, on Twitter, with my friend Barbie
 (@velociraptors)::
 
-    ME: Did I just release a new version of testosterone? Why yes, yes I did.
-     <link>
+    ME:      Did I just release a new version of testosterone? Why yes, yes I
+     did. <link>
 
-    BARBIE: what, exactly, makes it manly?
+    BARBIE:  what, exactly, makes it manly?
 
-    ME: It uses curses. I admit the manliness thing is a bit dated. Considering
-     renaming it testrogen.
+    ME:      It uses curses. I admit the manliness thing is a bit dated. 
+     Considering renaming it testrogen.
 
-    BARBIE: using curses makes it manly? I'm not sure I see the connection. I
+    BARBIE:  using curses makes it manly? I'm not sure I see the connection. I
      vote in favor of testrogen.
 
-    ME: Well, I felt pretty manly writing my own scrollbars. This is how it
-     made me feel: <van halen>
+    ME:      Well, I felt pretty manly writing my own scrollbars. This is how 
+     it made me feel: <van halen>
 
-    BARBIE: using the terminal has not helped me grow a beard, so it's clearly
+    BARBIE:  using the terminal has not helped me grow a beard, so it's clearly
      not very manly
 
-    ME (clearly not #winning): Check mate. Good game.
+    ME (clearly not #winning):  Check mate. Good game.
 
 
 First thing the next morning::
 
-    ME: Sorry for the sexism.
+    ME:     Sorry for the sexism.
 
     BARBIE: recognizing the problem is the first step
 
