@@ -8,19 +8,19 @@ version=0.4
 
 configure:
 # create the script to be installed
-	rm -f testosterone
-	cp bin/testosterone testosterone
-	chmod 555 testosterone
+	rm -f assertEquals
+	cp bin/assertEquals assertEquals
+	chmod 555 assertEquals
 
 # [re]create the man page to be installed
-	rm -f testosterone.1.gz
-	gzip -c -9 doc/man1/testosterone.1 > testosterone.1.gz
-	chmod 444 testosterone.1.gz
+	rm -f assertEquals.1.gz
+	gzip -c -9 doc/man1/assertEquals.1 > assertEquals.1.gz
+	chmod 444 assertEquals.1.gz
 
 
 clean:
 # remove all of the cruft that gets auto-generated on doc/install/release
-	rm -f testosterone testosterone.1.gz
+	rm -f assertEquals assertEquals.1.gz
 	rm -rf build
 	rm -rf dist
 	find . -name \*.pyc | xargs rm
@@ -28,14 +28,14 @@ clean:
 
 
 install: configure
-	install -o root -m 555 testosterone ${prefix}/bin
-	install -o root -m 444 testosterone.1.gz ${prefix}/man/man1
+	install -o root -m 555 assertEquals ${prefix}/bin
+	install -o root -m 444 assertEquals.1.gz ${prefix}/man/man1
 	python setup.py install
 
 
 uninstall:
-	rm -f ${prefix}/bin/testosterone
-	rm -f ${prefix}/man/man1/testosterone.1.gz
+	rm -f ${prefix}/bin/assertEquals
+	rm -f ${prefix}/man/man1/assertEquals.1.gz
 
 
 
@@ -45,22 +45,22 @@ uninstall:
 
 dist: clean
 	mkdir dist
-	mkdir dist/testosterone-${version}
-	cp -r Makefile README bin site-packages setup.py dist/testosterone-${version}
+	mkdir dist/assertEquals-${version}
+	cp -r Makefile README bin site-packages setup.py dist/assertEquals-${version}
 
 	make -C doc/tex html pdf clean
-	mkdir dist/testosterone-${version}/doc
-	cp -r doc/html doc/testosterone* dist/testosterone-${version}/doc
+	mkdir dist/assertEquals-${version}/doc
+	cp -r doc/html doc/assertEquals* dist/assertEquals-${version}/doc
 
-	find dist/testosterone-${version} -name \.svn | xargs rm -r
-	tar --directory dist -zcf dist/testosterone-${version}.tgz testosterone-${version}
-	tar --directory dist -jcf dist/testosterone-${version}.tbz testosterone-${version}
+	find dist/assertEquals-${version} -name \.svn | xargs rm -r
+	tar --directory dist -zcf dist/assertEquals-${version}.tgz assertEquals-${version}
+	tar --directory dist -jcf dist/assertEquals-${version}.tbz assertEquals-${version}
 
 # ZIP archive gets different line endings and script name
-	svneol clean -w dist/testosterone-${version}
-	mv dist/testosterone-${version}/bin/testosterone.py dist/testosterone-${version}/bin/testosterone
-	cd dist && zip -9rq testosterone-${version}.zip testosterone-${version}
-#	rm -rf dist/testosterone-${version}
+	svneol clean -w dist/assertEquals-${version}
+	mv dist/assertEquals-${version}/bin/assertEquals.py dist/assertEquals-${version}/bin/assertEquals
+	cd dist && zip -9rq assertEquals-${version}.zip assertEquals-${version}
+#	rm -rf dist/assertEquals-${version}
 
 
 
@@ -71,4 +71,4 @@ dist: clean
 # because they yield errors/failures (on purpose).
 
 test:
-	python bin/testosterone -s -x demo testosterone.tests
+	python bin/assertEquals -s -x demo assertEquals.tests
