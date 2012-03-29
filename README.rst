@@ -27,7 +27,7 @@ Please consult the Makefile to confirm and/or change installation paths, etc.
 Documentation
 -------------
 
-http://whit537.github.com/assertEquals/
-
 Yes, we're hosting an old-school, unholy, Python-Perl, PDFLaTeX to HTML,
 do-you-know-how-many-source-compiles-this-took monstrosity on Github Pages.
+
+http://whit537.github.com/assertEquals/
