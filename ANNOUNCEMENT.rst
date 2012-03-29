@@ -52,8 +52,8 @@ PyCon 2012. Let's do more of that!
 
 I've decided not to rename the project testrogen, however. Instead, I'm calling
 it assertEquals. I'm keeping the old pages around with a banner pointing to the
-new site, and if anyone is interested in an opinionated testing interface for
-Python, I encourage you to check it out:
+new site, and if anyone is interested in an epic testing interface for Python,
+I encourage you to check it out:
 
     https://github.com/whit537/assertEquals
 

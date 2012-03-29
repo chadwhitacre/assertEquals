@@ -1,4 +1,4 @@
-assertEquals is an opinionated testing interface for Python.
+assertEquals is an epic testing interface for Python.
 
 
 Screenshot
