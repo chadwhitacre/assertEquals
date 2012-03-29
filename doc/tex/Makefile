@@ -9,9 +9,9 @@ MKHOWTO    = $(PYTHON_SRC)/Doc/tools/mkhowto \
 				--favicon icons/zeta.ico \
 				--dir ./html \
 				--logging \
-				--up-link "http://whit537.github.com/assertEquals/" \
+				--up-link "https://github.com/whit537/assertEquals" \
 				--up-title "assertEquals homepage" \
-				--address "<a href=\"http://whit537.github.com/assertEquals/\">assertEquals is copyright &copy; 2005-2012 by Chad Whitacre, and is offered free of charge, warranty, and restrictions." \
+				--address "<a href=\"https://github.com/whit537/assertEquals\">assertEquals</a> is copyright &copy; 2005-2012 by Chad Whitacre, and is offered free of charge, warranty, and restrictions." \
 #				--style style.css
 
 
