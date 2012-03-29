@@ -9,6 +9,8 @@ also wrote a man page for it. Jeremy Hylton interrupted my lightening talk at
 PyCon 2006 to tell me that the Van Halen soundtrack was disrupting the session
 next door. Fun times.
 
+.. image:: https://github.com/whit537/assertEquals/raw/master/screenshot.png
+
 Fast forward to 2012. I haven't touched testosterone for years, but I still
 reminisce about it with friends at PyCon. For one reason and another I decided
 to try installing it last night, and with a tweak or two I got it to load in
