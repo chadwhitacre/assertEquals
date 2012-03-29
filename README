@@ -3,15 +3,16 @@ assertEquals is an opinionated Python testing interface.
 
 INSTALLATION
 
+To install the Python library and the executable:
+
     $ pip install assertEquals
 
+To also install the man page:
 
     $ make
     $ sudo make install
 
-This installs the assertEquals Python package, the assertEquals executable, and
-the assertEquals(1) man page. Please consult the Makefile to confirm and/or
-change installation paths, etc.
+Please consult the Makefile to confirm and/or change installation paths, etc.
 
 
 SEE ALSO
