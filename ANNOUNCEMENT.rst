@@ -3,7 +3,7 @@ Why I am Renaming Testosterone
 
 Seven years ago I released an open source project called testosterone, "the
 manly testing interface for Python." It was epic: a test runner implemented
-with curses, Norton Commander for unittest. I wrote my own scrollbars. I
+with curses, like Norton Commander for unittest. I wrote my own scrollbars. I
 proxied pdb in subprocesses. The docs were in Python's old LaTeX doc system. I
 also wrote a man page for it. Jeremy Hylton interrupted my lightening talk at
 PyCon 2006 to tell me that the Van Halen soundtrack was disrupting the session
