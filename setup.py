@@ -31,8 +31,7 @@ setup( name = 'assertEquals'
      , entry_points = { 'console_scripts'
                       : [ 'assertEquals = assertEquals.cli.main:main' ]
                        }
-     , description = ('assertEquals is an opinionated testing interface for '
-                      'Python.')
+     , description = 'assertEquals is an epic testing interface for Python.'
      , author = 'Chad Whitacre'
      , author_email = 'chad@zetaweb.com'
      , url = 'https://www.github.com/whit537/assertEquals/'
