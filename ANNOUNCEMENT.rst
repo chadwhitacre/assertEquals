@@ -57,6 +57,6 @@ Python, I encourage you to check it out:
 
     https://github.com/whit537/assertEquals
 
-Keep hacking, ladies and gentlefolk!
+Keep hacking, ladies!
 
 And Barbie, thank you for calling me out.
