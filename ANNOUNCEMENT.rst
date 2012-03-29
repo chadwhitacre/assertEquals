@@ -17,30 +17,30 @@ conversation that followed, on Twitter, with my friend Barbie
 (@velociraptors)::
 
     ME:      Did I just release a new version of testosterone? Why yes, yes I
-     did. <link>
+             did. <link>
 
     BARBIE:  what, exactly, makes it manly?
 
     ME:      It uses curses. I admit the manliness thing is a bit dated. 
-     Considering renaming it testrogen.
+             Considering renaming it testrogen.
 
     BARBIE:  using curses makes it manly? I'm not sure I see the connection. I
-     vote in favor of testrogen.
+             vote in favor of testrogen.
 
     ME:      Well, I felt pretty manly writing my own scrollbars. This is how 
-     it made me feel: <van halen>
+             it made me feel: <van halen>
 
     BARBIE:  using the terminal has not helped me grow a beard, so it's clearly
-     not very manly
+             not very manly
 
     ME (clearly not #winning):  Check mate. Good game.
 
 
 First thing the next morning::
 
-    ME:     Sorry for the sexism.
+    ME:      Sorry for the sexism.
 
-    BARBIE: recognizing the problem is the first step
+    BARBIE:  recognizing the problem is the first step
 
 
 I'm not going to pretend that testosterone wasn't fun, or that sexist jokes are
