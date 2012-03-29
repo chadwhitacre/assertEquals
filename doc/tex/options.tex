@@ -1,0 +1,33 @@
+\chapter{Options \label{options}}
+
+\program{assertEquals} takes the following options:
+
+\begin{description}
+
+\item[\programopt{-s}]
+\item[\longprogramopt{scripted}]
+    {Use the command-line interface. If not set, \program{assertEquals} will use
+    the \manpage{curses}{3} interface.}
+
+\item[\programopt{-f}]
+\item[\longprogramopt{find-only}]
+    {\program{assertEquals} should find \class{TestCase}s but not run them. This
+    only obtains in scripted mode, for summary reports.}
+
+\item[\programopt{-x} \var{stopwords}]
+\item[\longprogramopt{stopwords} \var{stopwords}]
+    {\var{stopwords} is a comma-delimited list of strings that, if they appear
+    in a module's full dotted name, will prevent that module from being included
+    in the search for \class{TestCase}s.}
+
+\item[\programopt{-t} \var{testcase}]
+\item[\longprogramopt{testcase} \var{testcase}]
+\item[\longprogramopt{TestCase} \var{testcase}]
+    {\program{assertEquals} should only run the tests found in \var{testcase} ,
+    which is the name of a Python \class{unittest.TestCase} class within the
+    module specified by \var{module}. Given this option, \program{assertEquals}
+    will output a detail report for the named \class{TestCase}; without it, a
+    summary report for all \class{TestCase}s found at or below \var{module}.
+    This option only obtains in scripted mode.}
+
+\end{description}

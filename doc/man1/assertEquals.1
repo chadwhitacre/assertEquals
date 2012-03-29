@@ -1,0 +1,307 @@
+.Dd January 1, 1970
+.Os
+.Dt ASSERTEQUALS 1 LOCAL
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh NAME
+.Nm assertEquals
+.Nd an opinionated testing interface for Python
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh SYNOPSIS
+.Nm
+.Op Ar options
+.Ar module
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh DESCRIPTION
+.Nm
+is an interface for running tests written with the Python standard library's
+unittest module. It delivers summary and detail reports on TestCases discovered
+in module-space, via both a command-line and a
+.Xr curses 3
+interface. The interactive mode is the default, but it depends on the
+non-interactive mode. For debugging, static tracebacks and interactive Python
+debugger (Pdb) sessions are available in both scripted and interactive modes.
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh OPTIONS
+.Bl -tag -width "--interactive" -compact
+.It Fl s
+.It Fl -scripted
+Use the command-line interface. If not set,
+.Nm
+will use the
+.Xr curses 3
+interface.
+.It Fl f
+.It Fl -find-only
+.Nm
+should find TestCases but not run them. This only obtains in scripted mode, for
+summary reports.
+.It Fl x Ar stopwords
+.It Fl -stopwords Ar stopwords
+.Ar stopwords
+is a comma-delimited list of strings that, if they appear in a module's
+full dotted name, will prevent that module from being included in the search
+for TestCases.
+.It Fl t Ar testcase
+.It Fl -testcase Ar testcase
+.It Fl -TestCase Ar testcase
+.Nm
+should only run the tests found in
+.Ar testcase ,
+which is the name of a Python unittest.TestCase class within the module
+specified by
+.Ar module .
+Given this option,
+.Nm
+will output a detail report for the named TestCase; without it, a summary
+report for all TestCases found at or below
+.Ar module .
+This option only obtains in scripted mode.
+.El
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh SCRIPTED MODE
+If the
+.Fl -testcase
+option is not given,
+.Nm
+imports
+.Ar module ,
+and then searches sys.modules for all modules at or below
+.Ar module
+that do not include any
+.Ar stopwords
+in their full dotted name.
+.Nm
+collects TestCase classes that are defined in these modules, and prints a
+summary report to the standard output of the format (actually 80 chars wide):
+.Pp
+.Bf -literal
+    -------------<| assertEquals |>-------------
+    <header row>
+    --------------------------------------------
+    <name>   <passing> <failures> <errors> <all>
+    --------------------------------------------
+    TOTALS   <passing> <failures> <errors> <all>
+.Ef
+.Pp
+<name> is the full dotted name of a TestCase (this row is repeated for each
+TestCase). If the
+.Fl -find
+flag is set, then no tests are run, and <passing>, <failures>, and <errors> are
+each set to a single dash
+.Ns ( Sq - ) .
+Otherwise, <passing> is given as a percentage, with a terminating percent sign;
+the other three are given in absolute terms. There will always be at least one
+space between each field, and data rows will be longer than 80 characters iff
+the field values exceed the following character lengths:
+.Pp
+.Bl -column -offset indent ".Sy field" ".Sy width"
+.It Sy field Ta Sy width
+.It Li name Ta "  60"
+.It Li failures Ta "   4"
+.It Li errors Ta "   4"
+.It Li total Ta "   4"
+.El
+.Pp
+Note that in order for your TestCases to be found, you must import their
+containing modules within
+.Ar module .
+.Nm
+sets the
+.Ev PYTHONTESTING
+environment variable to
+.Sq assertEquals
+so that you can avoid defining TestCases or importing testing modules in a
+production environment. You can also quarantine your tests in a subpackage, and
+give
+.Ar module
+as the dotted name of this subpackage.
+If the
+.Fl -testcase
+flag is set, then only the named TestCase is run (any
+.Fl -find
+option is ignored), and
+.Nm
+delivers a detail report. This report is the usual output of
+unittest.TextTestRunner, preceded by the same first banner row as for the
+summary report.
+For both summary and detail reports,
+.Nm
+guarantees that no program output will occur after the banner row.
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh INTERACTIVE MODE
+Interactive mode is a front end for scripted mode. There are two main screens,
+representing the summary and detail reports described above. Each is populated
+by calling
+.Nm
+in scripted mode in a child process, and then parsing and formatting the output.
+There are two additional screens: One is a primitive pager showing a Python
+traceback, which is used both for viewing individual test failures, as well as
+for error handling in both parent and child processes. The other is a primitive
+terminal for interacting with a Pdb session in a child process.
+You can send a SIGINT (<ctrl>-C) at any time to exit
+.Nm .
+.Ss Summary Screen
+The summary screen shows the summary report as described above, but item names
+are indented rather than given in full. Modules are shown in gray, and un-run
+TestCases in white. TestCases with non-passing tests are shown in red, and those
+that pass in green.
+You may run any subset of the presented tests. The totals for the most recent
+test run are shown at the bottom of the screen, in green if all tests pass, red
+otherwise. TestCases for which there are results but that were not part of the
+most recent test run are shown in faded red and green.
+.Bl -hang -width "right-arrow" -offset indent
+.It Em <ctrl>-L
+Refresh the list of available TestCases without running them.
+.It Em enter
+Run the selected tests and go to the detail screen if there are non-passing
+tests.
+.It Em left-arrow
+Alias for
+.Em q .
+.It Em q
+Exit
+.Nm .
+.It Em right-arrow
+Alias for
+.Em enter .
+.It Em space
+Alias for
+.Em enter .
+.It Em F5
+Alias for
+.Em enter .
+.El
+.Ss Detail Screen
+The detail screen shows a list of non-passing tests on the left side, and the
+traceback for the currently selected test on the right. Failures are displayed
+in red, and errors in yellow. Tests are listed in alphabetical order.
+.Bl -hang -width "      " -offset indent
+.It Em F5
+Run the tests again.
+.It Em enter
+Open the traceback for the selected test in an error screen.
+.It Em left-arrow
+Alias for
+.Em q .
+.It Em q
+Exit back to the summary screen.
+.It Em right-arrow
+Alias for
+.Em enter .
+.It Em space
+Alias for
+.Em F5 .
+.El
+.Ss Error Screen
+The error screen provides a primitive pager for viewing tracebacks.
+.Bl -hang -width "      " -offset indent
+.It Em left-arrow
+Alias for
+.Em q .
+.It Em q
+Exit back to the previous screen.
+.El
+.Ss Debugging Screen
+The debugging screen is a primitive terminal for interacting with a Python
+debugger session. When a child process includes the string
+.Sq "(Pdb) "
+in its output,
+.Nm
+enters the debugging screen. When the debugger exits,
+.Nm
+returns to the previous screen, ignoring any report output that may have
+followed the debugging session.
+You can easily start debugging from any point in your program or tests by
+manually setting a breakpoint:
+.Pp
+.Dl import pdb; pdb.set_trace()
+.Pp
+The Python debugger's command reference is online at:
+.Pp
+.Dl http://docs.python.org/lib/debugger-commands.html
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh IMPLEMENTATION NOTES
+This program is known to work with the following software:
+.Pp
+.Bl -dash -offset indent -compact
+.It
+FreeBSD 4.11
+.It
+Python 2.4.2
+.El
+.\"
+.\"
+.\"
+.\"
+.\"
+.\".Sh FILES
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh EXAMPLES
+Run
+.Nm Ns 's
+own tests, displaying a summary report on the standard output:
+.Bl -item -offset indent
+.It
+$ assertEquals -s assertEquals.tests
+.El
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh SEE ALSO
+.Xr python 1
+.Xr curses 3
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh VERSION
+assertEquals <trunk>
+.\"
+.\"
+.\"
+.\"
+.\"
+.Sh AUTHORS
+.Bl -item -compact
+.It
+(c) 2005-2012 Chad Whitacre <http://www.zetadev.com/>
+.It
+This program is beerware. If you like it, buy me a beer someday.
+.It
+No warranty is expressed or implied.
+.El

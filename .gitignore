@@ -1,0 +1,5 @@
+env/
+dist/
+distribute-*
+doc/html/
+*.pyc

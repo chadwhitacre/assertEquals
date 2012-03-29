@@ -1,0 +1,125 @@
+consider an ASSERT_EQUALS_STOPWORDS environment variable
+add ability to cancel a report refresh
+use kbd in doc for screens
+lame message when there is a syntax error
+    get an ImportError on the TestCase rather than the syntax error
+need console for program output before tests
+    so we can use print
+
+ScrollArea
+    consider wrapping: scroll off bottom jumps back to top
+    still some edge cases out there I think
+SummaryScreen
+    hard to debug inter-test problems
+        i.e., run all tests and some break, but just run that one and they work
+    remove TestCases, hit ctrl-L, the all still show up
+    submodule bullet bug: GetResponder, GetResponders
+    add new TestCase, hit ctrl-L, doesn't appear
+        update: new one shows up, but replaces existing one
+    spacebar from module doesn't refresh TestCases before running, so results look goofy
+    shouldn't show TestCases with 0 tests
+    coming from ErrorScreen, get:
+          File "/usr/home/whit537/workbench/assertEquals/site-
+            packages/assertEquals/interactive/screens/summary.py", line 323, in
+            draw_content
+          tpass5, tfail, terr, tall = self.summary.totals
+
+        ValueError: need more than 0 values to unpack
+    bug TestCase gone, get IndexError, q back to normal
+    if you import a TestCase into another module, it shows up twice
+DetailScreen
+    should run and report on tests in the order they are defined, not alphabetically
+    consider calling out line number of test somewhere, since that's the quickest way to jump to a test
+    potentially annoying to get bumped back to summary when you passed a test on purpose
+        but aren't done with that screen yet
+    when focus is on result during refresh, refresh doesn't get refreshed
+    down one, page down x2 error -- lost it, twice :^(
+    up always beeps in result pane
+ErrorScreen
+    really want to use a real pager for this if we can
+DebuggingScreen
+    really want to use the underlying terminal for this if we can
+    command history
+    deal better with resizes
+    try to keep scrollback (paging)
+    color(!)
+
+
+
+=====FUTURE=====
+ModulesScreen
+    highlight current selection better -- color!
+    ooh! delete removes module from testing list until next reload?
+    feedback while loading/updating
+        better is progress bar, but that means progressive communication with "server"
+        which is complicated because of program output or pdb sessions
+
+
+=====DONE=====
+SummaryScreen
+    scroll off bottom of screen is buggy
+    feedback while loading/updating
+        spinning wheel is the easy out
+    need to be smarter about which tests to show
+        don't show modules for which all tests pass
+        don't show modules for which there are no test
+        unless a submodule of that module has tests
+    highlighting
+        fresh -- cyan
+        stale -- dark blue
+        un-run tests -- gray
+        current modules -- bg
+        current submodules -- bg
+    bug: running 'task' yields no results!
+    can't write to bottom left corner! -- hacked for now
+    need to display totals
+    really should have pgup/pgdn/home/end
+    total highlight: white when unrun, red when failing, green when 100% passing
+    currow should persist across runs
+    bottom row should show current selection and stats
+    bug: summary borks on base='assertEquals.test'
+    bug: resize smaller borks
+    bug: not using last row of listing
+    bug: not seeing bottom continuation indicator
+    need to do something with errors
+    continuation indicators -> scrollbars!
+    should refuse to attempt run for module with 0 tests
+    annoying that F5 clears tests; that should be <ctrl>-F5
+ModuleScreen -> SummaryScreen
+DetailScreen
+    Detail
+    should immediately switch and then show 'working...'
+    move module name to bottom
+    make panes scroll -- includes arrows and continuation indicators
+    format result with textwrap
+    resize shouldn't trigger refresh
+    consider putting the usual totals from summary in the footer (red/green)
+    continuation indicators -> scrollbars!
+    q: KeyboardInterrupt -> ESC
+    enter -> opens traceback in ErrorScreen
+    hitting enter should update stats before going to DetailScreen
+    add left/right key support
+    should only go to DetailScreen if tests don't pass
+    trim module name in footer
+    loses selection returning from DetailScreen
+    result not cleaned between displays
+refactor to account for TestCase in between module and individual tests
+DebuggingScreen
+    proxying a child process's stdin/stdout
+    selectively triggering I/O proxing based on the output
+    capture lines of input and pass them back to the client
+    react to EOF
+    exit cleanly
+    safely restore curses state after exiting DebuggingScreen
+release
+    assertEquals.1
+    assertEquals.tex
+    package
+    tag release
+    update website
+    cheeseshop
+    screencast
+    announcement
+bug: JHolland's
+fix Makefile for GNU/Linux
+clean up line breaks in man page

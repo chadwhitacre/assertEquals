@@ -1,0 +1,13 @@
+when svn is stable, tag the release, then update the following items on the tag:
+    Makefile                                version
+    doc/assertEquals.1                      date; VERSION
+    doc/Makefile                            version
+    doc/tex/assertEquals.tex                version
+    setup.py                                version
+    site-packages/assertEquals/__init__.py  __version__; turn off logging
+
+make dist will re-generate docs and build archives
+    put docs and archives on zetadev.com/software
+
+update PyPI, and if necessary, the testing tools taxonomy:
+    http://pycheesecake.org/wiki/PythonTestingToolsTaxonomy

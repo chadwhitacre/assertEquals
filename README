@@ -1,0 +1,16 @@
+testosterone is a manly Python testing interface.
+
+
+INSTALLATION
+
+    $ make
+    $ sudo make install
+
+This installs the testosterone Python package, the testosterone executable, and
+the testosterone(1) man page. Please consult the Makefile to confirm and/or
+change installation paths, etc.
+
+
+SEE ALSO
+
+    http://www.zetadev.com/software/testosterone/

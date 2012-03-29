@@ -1,0 +1,90 @@
+\chapter{Interactive Mode \label{interactive}}
+
+Interactive mode is a front end for scripted mode. There are two main screens,
+representing the summary and detail reports described elsewhere. Each is
+populated by calling \program{assertEquals} in scripted mode in a child process,
+and then parsing and formatting the output. There are two additional screens:
+One is a primitive pager showing a Python traceback, which is used both for
+viewing individual test failures, as well as for error handling in both parent
+and child processes. The other is a primitive terminal for interacting with a
+\class{Pdb} session in a child process.
+
+You can send a \code{SIGINT} (\code{<ctrl>-C}) at any time to exit
+\program{assertEquals}.
+
+
+\section{Summary Screen \label{summary}}
+
+The summary screen shows the summary report as described above, but item names
+are indented rather than given in full. Modules are shown in gray, and un-run
+\class{TestCase}s in white. \class{TestCase}s with non-passing tests are shown in red, and those
+that pass in green.
+
+You may run any subset of the presented tests. The totals for the most recent
+test run are shown at the bottom of the screen, in green if all tests pass, red
+otherwise. \class{TestCase}s for which there are results but that were not part of the
+most recent test run are shown in faded red and green.
+
+\begin{tableii}{l|l}{code}{key}{description}
+\lineii{<ctrl>-L}
+    {Refresh the list of available \class{TestCase}s without running them.}
+\lineii{F5}
+    {Run the selected tests and go to the detail screen if there are non-passing
+    tests.}
+\lineii{enter}
+    {alias for \code{F5}}
+\lineii{q}
+    {Exit \program{assertEquals}.}
+\lineii{right-arrow}
+    {alias for \code{F5}}
+\lineii{space}
+    {alias for \code{F5}}
+\end{tableii}
+
+
+\section{Detail Screen \label{detail}}
+
+The detail screen shows a list of non-passing tests on the left side, and the
+traceback for the currently selected test on the right. Failures are displayed
+in red, and errors in yellow. Tests are listed in alphabetical order.
+
+\begin{tableii}{l|l}{code}{key}{description}
+\lineii{F5}{Run the tests again.}
+\lineii{enter}{Open the traceback for the selected test in an error screen.}
+\lineii{left-arrow}{Alias for \code{q}.}
+\lineii{q}{Exit back to the summary screen.}
+\lineii{right-arrow}{Alias for \code{enter}.}
+\lineii{space}{Alias for \code{F5}.}
+\end{tableii}
+
+
+\section{Error Screen \label{error}}
+
+The error screen provides a primitive pager for viewing tracebacks.
+
+\begin{tableii}{l|l}{code}{key}{description}
+\lineii{left-arrow}{Alias for \code{q}.}
+\lineii{q}{Exit back to the previous screen.}
+\end{tableii}
+
+
+\section{Debugging Screen \label{debugging}}
+
+The debugging screen is a primitive terminal for interacting with a Python
+debugger session. When a child process includes the string '\code{(Pdb) }' in
+its output, \program{assertEquals} enters the debugging screen. When the
+debugger exits, \program{assertEquals} returns to the previous screen, ignoring
+any report output that may have followed the debugging session.
+
+You can easily start debugging from any point in your program or tests by
+manually setting a breakpoint:
+
+\begin{verbatim}
+import pdb; pdb.set_trace()
+\end{verbatim}
+
+\begin{seealso}
+\seeurl
+    {http://docs.python.org/lib/debugger-commands.html}
+    {The Python debugger command reference.}
+\end{seealso}

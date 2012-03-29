@@ -1,0 +1,50 @@
+\chapter{Scripted Mode \label{scripted}}
+
+If the \longprogramopt{testcase} option is not given, \program{assertEquals}
+imports \var{module}, and then searches \code{sys.modules} for all modules at or
+below \var{module} that do not include any \var{stopwords} in their full dotted
+name. \program{assertEquals} collects \class{TestCase} classes that are defined
+in these modules, and prints a summary report to the standard output of the
+format:
+
+
+\begin{verbatim}
+-------------------------------<| assertEquals |>-------------------------------
+<header row>
+--------------------------------------------------------------------------------
+<name>                                       <passing> <failures> <errors> <all>
+--------------------------------------------------------------------------------
+TOTALS                                       <passing> <failures> <errors> <all>
+\end{verbatim}
+
+\code{<name>} is the full dotted name of a \class{TestCase} (this row is
+repeated for each \class{TestCase}). If the \longprogramopt{find} flag is set,
+then no tests are run, and \code{<passing>}, \code{<failures>}, and
+\code{<errors>} are each set to a single dash (\code{-}). Otherwise,
+\code{<passing>} is given as a percentage, with a terminating percent sign; the
+other three are given in absolute terms. There will always be at least one space
+between each field, and data rows will be longer than 80 characters iff the
+field values exceed the following character lengths:
+
+\begin{tableii}{l|l}{}{field}{width}
+\lineii{name}{60}
+\lineii{failures}{4}
+\lineii{errors}{4}
+\lineii{all}{4}
+\end{tableii}
+
+Note that in order for your \class{TestCase}s to be found, you must import their
+containing modules within \var{module}. \program{assertEquals} sets the
+\envvar{PYTHONTESTING} environment variable to \code{assertEquals} so that you
+can avoid defining \class{TestCase}s or importing testing modules in a
+production environment. You can also quarantine your tests in a subpackage, and
+give \var{module} as the dotted name of this subpackage.
+
+If the \longprogramopt{testcase} flag is set, then only the named
+\class{TestCase} is run (any \longprogramopt{find} option is ignored), and
+\program{assertEquals} delivers a detail report. This report is the usual output
+of \class{unittest.TextTestRunner}, preceded by the same first banner row as for
+the summary report.
+
+For both summary and detail reports, \program{assertEquals} guarantees that no
+program output will occur after the banner row.
