@@ -31,3 +31,10 @@ Yes, we're hosting an old-school, unholy, Python-Perl, PDFLaTeX to HTML,
 do-you-know-how-many-source-compiles-this-took monstrosity on Github Pages.
 
 http://whit537.github.com/assertEquals/
+
+
+What's in a Name?
+-----------------
+
+assertEquals used to be called testosterone. `Here's why I changed it.
+<https://github.com/whit537/assertEquals/blob/master/ANNOUNCEMENT.rst>`_
