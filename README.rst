@@ -37,4 +37,4 @@ What's in a Name?
 -----------------
 
 assertEquals used to be called testosterone. `Here's why I changed it.
-<https://github.com/whit537/assertEquals/blob/master/ANNOUNCEMENT.rst>`_
+<https://github.com/whit537/assertEquals/blob/master/ANNOUNCEMENT.rst#readme>`_
