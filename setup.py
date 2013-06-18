@@ -10,7 +10,7 @@ classifiers = [
   , 'Environment :: Console'
   , 'Environment :: Console :: Curses'
   , 'Intended Audience :: Developers'
-  , 'License :: Freeware'
+  , 'License :: BSD'
   , 'Natural Language :: English'
   , 'Operating System :: MacOS :: MacOS X'
   , 'Operating System :: Microsoft :: Windows'
