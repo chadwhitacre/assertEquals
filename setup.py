@@ -20,7 +20,7 @@ classifiers = [
                 ]
 
 setup( name = 'assertEquals'
-     , version = '0.4.3'
+     , version = '0.4.4'
      , packages = [ 'assertEquals'
                   , 'assertEquals.cli'
                   , 'assertEquals.interactive'
