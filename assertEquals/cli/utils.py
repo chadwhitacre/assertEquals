@@ -21,6 +21,8 @@ class dev_null:
     """
     def write(self, wheeeee):
         pass
+    def flush(self):
+        pass
 
 
 def flatten(_suite):
