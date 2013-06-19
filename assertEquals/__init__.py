@@ -1,5 +1,4 @@
 import logging
-import os
 
 __author__ = "Chad Whitacre <chad@zetaweb.com>"
 __version__ = "0.4"
